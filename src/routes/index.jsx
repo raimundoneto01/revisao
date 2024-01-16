@@ -1,6 +1,7 @@
 import {createBrowserRouter, Link } from "react-router-dom";
 import Home from "../pages/Home";
 
+
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -15,5 +16,6 @@ export const router = createBrowserRouter([
             </div>
         )
     },
+   
     
 ])

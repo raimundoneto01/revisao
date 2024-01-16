@@ -1,19 +1,13 @@
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Text } from "../../components/Text";
-import { Textcpf } from "../../components/TextCpf";
+import { Card } from "../../components/Card";
+import { useHome } from "./useHome";
 
 export default function Home() {
-  const navigate = useNavigate();
-  
+  const {users} = useHome()
+ 
   return (
     
-      <div>
-        <h1>Hellow word</h1>
-          <Text textValue='teste  123'/>
-          <Textcpf cpf="01234567890"/>
-          <Link to="about">About Us</Link>
-         <button onClick={() => navigate("/about")}>Página sobre</button>
+      <div className="bg-gray-300 min-h-screen p-5">
+         { users.length > 0 && users.map((user) => <Card key={user.id} email={user.email} nome={user.name}/> )}
       </div>
    
   );
